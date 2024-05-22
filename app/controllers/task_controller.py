@@ -36,7 +36,7 @@ def create_task():
     if not title or not description or not status or not created_at or not assigned_to:
         return jsonify({"error", "faltan datos requeridos"}), 404
     
-    task = Task(title, description, status, created_at, assigned_to)
+    task = Task(title=title, description=description, status=status, created_at=created_at, asigned_to=assigned_to)
     task.save()
     return jsonify(render_task_detail(task))
 

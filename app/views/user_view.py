@@ -1,4 +1,4 @@
-def render_users_list(users):
+def render_user_list(users):
     return [
         {
             "id": user.id,
