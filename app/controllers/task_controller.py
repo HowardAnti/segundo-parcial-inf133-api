@@ -38,7 +38,7 @@ def create_task():
     
     task = Task(title=title, description=description, status=status, created_at=created_at, asigned_to=assigned_to)
     task.save()
-    return jsonify(render_task_detail(task))
+    return jsonify(render_task_detail(task)),201
 
 @task_bp.route("/tasks/<int:id>", methods=["PUT"])
 @jwt_required
