@@ -12,11 +12,11 @@ class Task(db.Model):
 
 
     def __init__(self, title, description, status, created_at, assigned_to):
-        title = title
-        description = description
-        status = status
-        created_at = created_at
-        assigned_to = assigned_to
+        self.title = title
+        self.description = description
+        self.status = status
+        self.created_at = created_at
+        self.assigned_to = assigned_to
 
     def save(self):
         db.session.add(self)

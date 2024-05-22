@@ -33,10 +33,16 @@ def create_task():
     created_at = data.get("created_at")
     assigned_to = data.get("assigned_to")
     
-    if not title or not description or not status or not created_at or not assigned_to:
+    if title is None or description is None or status is None or created_at is None or assigned_to is None:
         return jsonify({"error", "faltan datos requeridos"}), 404
     
-    task = Task(title=title, description=description, status=status, created_at=created_at, asigned_to=assigned_to)
+    print(title)
+    print(description)
+    print(status)
+    print(created_at)
+    print(assigned_to)
+    
+    task = Task(title=title, description=description, status=status, created_at=created_at, assigned_to=assigned_to)
     task.save()
     return jsonify(render_task_detail(task)),201
 
